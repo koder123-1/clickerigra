@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ КЛИКЕР ЭПОХИ ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Фоновые частицы -->
+    <div class="particles"></div>
+    
+    <!-- Навигация -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">✨КЛИКЕР✨</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">🏠 Игра</a>
+                <a href="shop.html" class="nav-link">🏪 Магазин</a>
+                <a href="stats.html" class="nav-link">📊 Статистика</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="game-main">
+        <div class="game-container">
+            <!-- Индикатор сохранения -->
+            <div class="save-badge" id="saveIndicator">💾 автосохранение</div>
+
+            <!-- Счётчик валют -->
+            <div class="crystal-panel">
+                <div class="crystal-icon">💎</div>
+                <div class="crystal-count" id="scoreDisplay">0</div>
+                <div class="crystal-label">кристаллов</div>
+            </div>
+
+            <!-- Кнопка клика с эффектами -->
+            <div class="clicker-area">
+                <button class="mega-clicker" id="clickButton">
+                    <div class="clicker-inner">
+                        <span class="clicker-emoji">💎</span>
+                        <span class="clicker-text">КЛИК</span>
+                        <span class="clicker-badge" id="clickValueBadge">+1</span>
+                    </div>
+                    <div class="clicker-ring"></div>
+                    <div class="clicker-ring2"></div>
+                </button>
+            </div>
+
+            <!-- Быстрая статистика -->
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-value" id="perClickDisplay">1</div>
+                    <div class="stat-label">за клик</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value" id="levelDisplay">1</div>
+                    <div class="stat-label">уровень</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">🔄</div>
+                    <div class="stat-value" id="totalClicksDisplay">0</div>
+                    <div class="stat-label">кликов</div>
+                </div>
+            </div>
+
+            <!-- Быстрые улучшения -->
+            <div class="quick-upgrades">
+                <h3>⚡ Быстрые улучшения</h3>
+                <div class="upgrade-row">
+                    <button class="upgrade-btn-small" id="quickPowerBtn">
+                        <span class="upgrade-icon">⚡</span>
+                        <span class="upgrade-info">
+                            <span class="upgrade-name">+1 сила</span>
+                            <span class="upgrade-cost" id="quickPowerCost">10</span>
+                        </span>
+                    </button>
+                    <button class="upgrade-btn-small" id="quickMultiBtn">
+                        <span class="upgrade-icon">✨</span>
+                        <span class="upgrade-info">
+                            <span class="upgrade-name">×2 сила</span>
+                            <span class="upgrade-cost" id="quickMultiCost">50</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Призыв к переходу в магазин -->
+            <div class="shop-teaser">
+                <p>🏪 В магазине ждут эпичные улучшения!</p>
+                <a href="shop.html" class="teaser-btn">Перейти в магазин →</a>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="action-buttons">
+                <button class="action-btn save-btn" id="saveBtn">
+                    <span>💾</span> Сохранить
+                </button>
+                <button class="action-btn reset-btn" id="resetBtn">
+                    <span>⟳</span> Сброс
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Анимированный фон с искрами -->
+    <div class="sparkles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
