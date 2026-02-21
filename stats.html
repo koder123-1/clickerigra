@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Статистика - КЛИКЕР ЭПОХИ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">✨КЛИКЕР✨</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">🏠 Игра</a>
+                <a href="shop.html" class="nav-link">🏪 Магазин</a>
+                <a href="stats.html" class="nav-link active">📊 Статистика</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="game-main">
+        <div class="game-container stats-container">
+            <h2 class="page-title">📊 Статистика игрока</h2>
+
+            <!-- Основная статистика -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon">💎</div>
+                    <div class="stat-card-label">Всего кристаллов</div>
+                    <div class="stat-card-value" id="statTotalCrystals">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">⚡</div>
+                    <div class="stat-card-label">Сила клика</div>
+                    <div class="stat-card-value" id="statClickPower">1</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">🖱️</div>
+                    <div class="stat-card-label">Всего кликов</div>
+                    <div class="stat-card-value" id="statTotalClicks">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">📈</div>
+                    <div class="stat-card-label">Уровень</div>
+                    <div class="stat-card-value" id="statLevel">1</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">⏱️</div>
+                    <div class="stat-card-label">Времени в игре</div>
+                    <div class="stat-card-value" id="statPlayTime">0 мин</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">🏆</div>
+                    <div class="stat-card-label">Достижений</div>
+                    <div class="stat-card-value" id="statAchievements">0/12</div>
+                </div>
+            </div>
+
+            <!-- Достижения -->
+            <h3 class="section-title">🏆 Достижения</h3>
+            <div class="achievements-grid" id="achievementsGrid">
+                <div class="achievement-card locked" id="ach1">
+                    <div class="achievement-icon">👶</div>
+                    <div class="achievement-info">
+                        <h4>Новичок</h4>
+                        <p>Сделайте 10 кликов</p>
+                    </div>
+                    <div class="achievement-progress">0/10</div>
+                </div>
+                <div class="achievement-card locked" id="ach2">
+                    <div class="achievement-icon">🔨</div>
+                    <div class="achievement-info">
+                        <h4>Труженик</h4>
+                        <p>Сделайте 100 кликов</p>
+                    </div>
+                    <div class="achievement-progress">0/100</div>
+                </div>
+                <div class="achievement-card locked" id="ach3">
+                    <div class="achievement-icon">⚡</div>
+                    <div class="achievement-info">
+                        <h4>Электрик</h4>
+                        <p>Достигните силы 10</p>
+                    </div>
+                    <div class="achievement-progress">1/10</div>
+                </div>
+                <div class="achievement-card locked" id="ach4">
+                    <div class="achievement-icon">💰</div>
+                    <div class="achievement-info">
+                        <h4>Богач</h4>
+                        <p>Накопите 1000 кристаллов</p>
+                    </div>
+                    <div class="achievement-progress">0/1000</div>
+                </div>
+                <div class="achievement-card locked" id="ach5">
+                    <div class="achievement-icon">🔥</div>
+                    <div class="achievement-info">
+                        <h4>Огонь</h4>
+                        <p>1000 кликов</p>
+                    </div>
+                    <div class="achievement-progress">0/1000</div>
+                </div>
+                <div class="achievement-card locked" id="ach6">
+                    <div class="achievement-icon">👑</div>
+                    <div class="achievement-info">
+                        <h4>Легенда</h4>
+                        <p>Сила клика 100</p>
+                    </div>
+                    <div class="achievement-progress">1/100</div>
+                </div>
+            </div>
+
+            <!-- График прогресса (простенький) -->
+            <h3 class="section-title">📈 Прогресс</h3>
+            <div class="progress-chart">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-label">Следующий уровень:</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="levelProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-bar-value" id="levelProgressText">0/8 кликов</div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-label">До след. достижения:</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="achProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-bar-value" id="achProgressText">0/10 кликов</div>
+                </div>
+            </div>
+
+            <!-- Кнопка экспорта/импорта -->
+            <div class="data-controls">
+                <button class="data-btn" id="exportBtn">📤 Экспорт сохранения</button>
+                <button class="data-btn" id="importBtn">📥 Импорт сохранения</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="sparkles"></div>
+    <script src="script.js"></script>
+</body>
+</html>
