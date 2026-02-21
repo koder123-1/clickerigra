@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏪 Магазин - КЛИКЕР ЭПОХИ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">✨КЛИКЕР✨</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">🏠 Игра</a>
+                <a href="shop.html" class="nav-link active">🏪 Магазин</a>
+                <a href="stats.html" class="nav-link">📊 Статистика</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="game-main">
+        <div class="game-container shop-container">
+            <h2 class="page-title">🏪 Магазин улучшений</h2>
+            <div class="crystal-display-mini">
+                <span class="mini-crystal-icon">💎</span>
+                <span class="mini-crystal-count" id="shopCrystalDisplay">0</span>
+            </div>
+
+            <!-- Категории улучшений -->
+            <div class="shop-categories">
+                <button class="category-btn active" data-category="basic">Базовые</button>
+                <button class="category-btn" data-category="advanced">Продвинутые</button>
+                <button class="category-btn" data-category="special">Особые</button>
+            </div>
+
+            <!-- Сетка улучшений -->
+            <div class="shop-grid" id="shopGrid">
+                <!-- Базовые улучшения (категория basic) -->
+                <div class="shop-item" data-category="basic">
+                    <div class="item-icon">⚡</div>
+                    <div class="item-info">
+                        <h4>Усиление клика</h4>
+                        <p>+1 кристалл за клик</p>
+                        <div class="item-level">Уровень: <span id="powerLevel">1</span></div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="powerPrice">10</span>
+                    </div>
+                    <button class="item-buy-btn" id="shopPowerBtn">Купить</button>
+                </div>
+
+                <div class="shop-item" data-category="basic">
+                    <div class="item-icon">✨</div>
+                    <div class="item-info">
+                        <h4>Множитель</h4>
+                        <p>Удваивает силу клика</p>
+                        <div class="item-level">Уровень: <span id="multiLevel">1</span></div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="multiPrice">50</span>
+                    </div>
+                    <button class="item-buy-btn" id="shopMultiBtn">Купить</button>
+                </div>
+
+                <!-- Продвинутые улучшения (категория advanced) -->
+                <div class="shop-item" data-category="advanced">
+                    <div class="item-icon">⏱️</div>
+                    <div class="item-info">
+                        <h4>Автокликер</h4>
+                        <p>Автоматический клик каждые 10 сек</p>
+                        <div class="item-level">Уровень: <span id="autoClickerLevel">0</span></div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="autoClickerPrice">100</span>
+                    </div>
+                    <button class="item-buy-btn" id="autoClickerBtn">Купить</button>
+                </div>
+
+                <div class="shop-item" data-category="advanced">
+                    <div class="item-icon">🎯</div>
+                    <div class="item-info">
+                        <h4>Критический удар</h4>
+                        <p>10% шанс х3 кристаллов</p>
+                        <div class="item-level">Уровень: <span id="critLevel">0</span></div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="critPrice">150</span>
+                    </div>
+                    <button class="item-buy-btn" id="critBtn">Купить</button>
+                </div>
+
+                <!-- Особые улучшения (категория special) -->
+                <div class="shop-item" data-category="special">
+                    <div class="item-icon">🌟</div>
+                    <div class="item-info">
+                        <h4>Золотой клик</h4>
+                        <p>Каждый 10-й клик дает х5</p>
+                        <div class="item-level">Уровень: <span id="goldenLevel">0</span></div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="goldenPrice">300</span>
+                    </div>
+                    <button class="item-buy-btn" id="goldenBtn">Купить</button>
+                </div>
+
+                <div class="shop-item" data-category="special">
+                    <div class="item-icon">👑</div>
+                    <div class="item-info">
+                        <h4>Легендарный кликер</h4>
+                        <p>+50 к силе навсегда</p>
+                        <div class="item-level">Доступно: 1 раз</div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price-icon">💎</span>
+                        <span id="legendaryPrice">1000</span>
+                    </div>
+                    <button class="item-buy-btn" id="legendaryBtn">Купить</button>
+                </div>
+            </div>
+
+            <!-- Подсказка -->
+            <div class="shop-tip">
+                💡 Совет: покупайте улучшения, чтобы кликать эффективнее!
+            </div>
+        </div>
+    </main>
+
+    <div class="sparkles"></div>
+    <script src="script.js"></script>
+</body>
+</html>
